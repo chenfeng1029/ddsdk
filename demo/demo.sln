@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "demo", "demo\demo.vbproj", "{F16E8548-B18E-4E40-96D6-A545B37C2261}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D4F73E7E-6363-45D0-84EC-FA3A25011EB0} = {D4F73E7E-6363-45D0-84EC-FA3A25011EB0}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LINK.ddsdk", "..\..\..\类库\LINK.ddsdk\LINK.ddsdk\LINK.ddsdk.vbproj", "{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F16E8548-B18E-4E40-96D6-A545B37C2261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16E8548-B18E-4E40-96D6-A545B37C2261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16E8548-B18E-4E40-96D6-A545B37C2261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16E8548-B18E-4E40-96D6-A545B37C2261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

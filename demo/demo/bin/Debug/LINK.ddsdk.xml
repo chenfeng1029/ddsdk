@@ -1,0 +1,101 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LINK.ddsdk
+</name>
+</assembly>
+<members>
+<member name="T:LINK.ddsdk.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:LINK.ddsdk.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:LINK.ddsdk.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:LINK.ddsdk.AccessToken">
+ <summary>
+ 2019.7.22
+ 记录获取到的access_token值，和什么提取
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.AppConfigInfo">
+ <summary>
+ 2019.7.21
+ 获取本地应用程序配置信息
+ </summary>
+</member>
+<member name="M:LINK.ddsdk.AppConfigInfo.CorpId">
+ <summary>
+ 对应钉钉应用的AppKey
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.AppConfigInfo.CorpSecret">
+ <summary>
+ 对应钉钉应用的AppSecret
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.AppConfigInfo.GetConfigValue(System.String)">
+ <summary>
+ 获取配置表指定参数的值
+ </summary>
+ <param name="key"></param>
+ <returns></returns>
+</member>
+<member name="T:LINK.ddsdk.ddSdk">
+ <summary>
+ 2019.7.23
+ 钉钉相关操作类库
+ </summary>
+</member>
+<member name="P:LINK.ddsdk.ddSdk.CorpId">
+ <summary>
+ 对应钉钉应用的AppKey
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.ddSdk.CorpSecret">
+ <summary>
+ 对应钉钉应用的AppSecret
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.ddSdk.ErrorInfo">
+ <summary>
+ 2019.7.22
+ 错误信息
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.ddSdk.GetAccessToken">
+ <summary>
+ 2019.7.23
+ 获取access_token信息，获取成功返回1，失败返回-2，并输出错误信息
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:LINK.ddsdk.ErrCodeEnum">
+ <summary>
+ 2019.7.22
+ 错误代码
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.TokenResult">
+ <summary>
+ 2019.7.22
+ access_token验证返回信息
+ </summary>
+</member>
+</members>
+</doc>
