@@ -5,6 +5,7 @@ Imports System.Text
 Imports Newtonsoft.Json
 ''' <summary>
 ''' 2019.7.23
+''' 作者：kevin zhu
 ''' 钉钉相关操作类库
 ''' </summary>
 Public Class ddSdk
