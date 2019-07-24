@@ -56,6 +56,7 @@ LINK.ddsdk
 <member name="T:LINK.ddsdk.ddSdk">
  <summary>
  2019.7.23
+ 作者：kevin zhu
  钉钉相关操作类库
  </summary>
 </member>
@@ -90,6 +91,31 @@ LINK.ddsdk
  2019.7.22
  错误代码
  </summary>
+</member>
+<member name="T:LINK.ddsdk.Httplib">
+ <summary>
+ 2019.7.24
+ HttpWebRequest封装的类，用于发起Get,Post请求，返回获取信息值
+ </summary>
+</member>
+<member name="M:LINK.ddsdk.Httplib.PostData(System.String,System.String,System.Int32)">
+ <summary>
+ 2019.7.24
+ 发送url指令信息，返回接收消息
+ </summary>
+ <param name="vurl"></param>
+ <param name="vdata"></param>
+ <param name="vTimeout">默认超时2000</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Httplib.GetData(System.String,System.Int32)">
+ <summary>
+ 2019.7.24
+ 请求url,如果需要传参数，可以在url末尾加上?+参数名=参数值即可
+ </summary>
+ <param name="vurl"></param>
+ <param name="vTimeout"></param>
+ <returns></returns>
 </member>
 <member name="T:LINK.ddsdk.TokenResult">
  <summary>

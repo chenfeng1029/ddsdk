@@ -8,7 +8,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "demo", "demo\demo.vbproj", 
 		{D4F73E7E-6363-45D0-84EC-FA3A25011EB0} = {D4F73E7E-6363-45D0-84EC-FA3A25011EB0}
 	EndProjectSection
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LINK.ddsdk", "..\..\..\类库\LINK.ddsdk\LINK.ddsdk\LINK.ddsdk.vbproj", "{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LINK.ddsdk", "..\LINK.ddsdk\LINK.ddsdk\LINK.ddsdk.vbproj", "{D4F73E7E-6363-45D0-84EC-FA3A25011EB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
