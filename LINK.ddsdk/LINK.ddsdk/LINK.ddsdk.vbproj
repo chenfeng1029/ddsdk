@@ -69,6 +69,7 @@
     <Compile Include="AccessToken.vb" />
     <Compile Include="AppConfigInfo.vb" />
     <Compile Include="ddsdk.vb" />
+    <Compile Include="httplib.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
