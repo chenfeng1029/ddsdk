@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\..\..\..\..\VBNetDll\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\VBNetDll\</OutputPath>
     <DocumentationFile>LINK.ddsdk.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,10 +67,13 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessToken.vb" />
-    <Compile Include="AppConfigInfo.vb" />
-    <Compile Include="ddsdk.vb" />
-    <Compile Include="httplib.vb" />
+    <Compile Include="Base\AccessToken.vb" />
+    <Compile Include="Tools\AppConfigInfo.vb" />
+    <Compile Include="Base\ErrCodeEnum.vb" />
+    <Compile Include="other\ITopParser.vb" />
+    <Compile Include="other\Constants.vb" />
+    <Compile Include="Base\DingTalkAccessToken.vb" />
+    <Compile Include="Base\IErrInfo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -85,7 +89,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TokenResult.vb" />
+    <Compile Include="Tools\DingTalkClient.vb" />
+    <Compile Include="other\DingTalkConstants.vb" />
+    <Compile Include="Request\DingTalkMessageSendRequest.vb" />
+    <Compile Include="Response\DingTalkResponse.vb" />
+    <Compile Include="Tools\RequestValidator.vb" />
+    <Compile Include="other\TopException.vb" />
+    <Compile Include="Response\TopResponse.vb" />
+    <Compile Include="other\StreamContract.vb" />
+    <Compile Include="Base\TokenResult.vb" />
+    <Compile Include="other\TopXmlParser.vb" />
+    <Compile Include="other\TopDictionary.vb" />
+    <Compile Include="Tools\Weblib.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -107,6 +122,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
