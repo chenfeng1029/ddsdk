@@ -22,10 +22,79 @@ LINK.ddsdk
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="T:LINK.ddsdk.AccessToken">
+<member name="T:LINK.ddsdk.Base.AccessToken">
  <summary>
  2019.7.22
  记录获取到的access_token值，和什么提取
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.Base.ErrCodeEnum">
+ <summary>
+ 2019.7.22
+ 错误代码
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.Base.DingTalkAccessToken">
+ <summary>
+ 2019.7.23
+ 作者：kevin zhu
+ 钉钉相关操作类库
+ </summary>
+</member>
+<member name="P:LINK.ddsdk.Base.DingTalkAccessToken.CorpId">
+ <summary>
+ 对应钉钉应用的AppKey
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Base.DingTalkAccessToken.CorpSecret">
+ <summary>
+ 对应钉钉应用的AppSecret
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Base.DingTalkAccessToken.ErrMessage">
+ <summary>
+ 2019.7.22
+ 错误信息
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Base.DingTalkAccessToken.AccessToken">
+ <summary>
+ AccessToken值
+ </summary>
+ <returns></returns>
+</member>
+<member name="F:LINK.ddsdk.Base.DingTalkAccessToken.Appkey">
+ <summary>
+ 2019.7.27
+ 钉钉应用appkey
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.Base.DingTalkAccessToken.AppSecret">
+ <summary>
+ 2019.7.27
+ 钉钉应用appsecret
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.Base.DingTalkAccessToken.Serverurl">
+ <summary>
+ 2019.7.27
+ 请求url连接
+ </summary>
+</member>
+<member name="M:LINK.ddsdk.Base.DingTalkAccessToken.GetAccessToken">
+ <summary>
+ 2019.7.23
+ 获取access_token信息，获取成功返回1，失败返回-2，并输出错误信息
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:LINK.ddsdk.Base.TokenResult">
+ <summary>
+ 2019.7.22
+ access_token验证返回信息
  </summary>
 </member>
 <member name="T:LINK.ddsdk.AppConfigInfo">
@@ -34,13 +103,13 @@ LINK.ddsdk
  获取本地应用程序配置信息
  </summary>
 </member>
-<member name="M:LINK.ddsdk.AppConfigInfo.CorpId">
+<member name="M:LINK.ddsdk.AppConfigInfo.Appkey">
  <summary>
  对应钉钉应用的AppKey
  </summary>
  <returns></returns>
 </member>
-<member name="M:LINK.ddsdk.AppConfigInfo.CorpSecret">
+<member name="M:LINK.ddsdk.AppConfigInfo.AppSecret">
  <summary>
  对应钉钉应用的AppSecret
  </summary>
@@ -52,45 +121,6 @@ LINK.ddsdk
  </summary>
  <param name="key"></param>
  <returns></returns>
-</member>
-<member name="T:LINK.ddsdk.ddSdk">
- <summary>
- 2019.7.23
- 作者：kevin zhu
- 钉钉相关操作类库
- </summary>
-</member>
-<member name="P:LINK.ddsdk.ddSdk.CorpId">
- <summary>
- 对应钉钉应用的AppKey
- </summary>
- <returns></returns>
-</member>
-<member name="P:LINK.ddsdk.ddSdk.CorpSecret">
- <summary>
- 对应钉钉应用的AppSecret
- </summary>
- <returns></returns>
-</member>
-<member name="P:LINK.ddsdk.ddSdk.ErrorInfo">
- <summary>
- 2019.7.22
- 错误信息
- </summary>
- <returns></returns>
-</member>
-<member name="M:LINK.ddsdk.ddSdk.GetAccessToken">
- <summary>
- 2019.7.23
- 获取access_token信息，获取成功返回1，失败返回-2，并输出错误信息
- </summary>
- <returns></returns>
-</member>
-<member name="T:LINK.ddsdk.ErrCodeEnum">
- <summary>
- 2019.7.22
- 错误代码
- </summary>
 </member>
 <member name="T:LINK.ddsdk.Httplib">
  <summary>
@@ -117,11 +147,317 @@ LINK.ddsdk
  <param name="vTimeout"></param>
  <returns></returns>
 </member>
-<member name="T:LINK.ddsdk.TokenResult">
+<member name="T:LINK.ddsdk.ITopParser`1">
  <summary>
- 2019.7.22
- access_token验证返回信息
+ TOP API响应解释器接口。响应格式可以是XML, JSON等等。
  </summary>
+ <typeparam name="T"></typeparam>
+</member>
+<member name="T:LINK.ddsdk.Constants">
+ <summary>
+ 2019.7.26
+ 常用的常量类
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.IErrInfo">
+ <summary>
+ 创建时间：2019.7.26
+ 作者：kevin zhu
+ 说明：错误信息接口   
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:LINK.ddsdk.IErrInfo.ErrMessage">
+ <summary>
+ 说明：错误信息    
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient._nErrmessage1">
+ <summary>
+ 错误信息
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.Appkey">
+ <summary>
+ 应用key
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.Appsecret">
+ <summary>
+ 2019.7.27
+ 应用serect
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.DisableParser">
+ <summary>
+ 禁止响应结果解释
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.UseGzipEncoding">
+ <summary>
+ 是否启用响应GZIP压缩
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.WebTools">
+ <summary>
+ 网络类
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.SystemParameters">
+ <summary>
+ ' 设置所有请求共享的系统级参数
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.UseSimplifyJson">
+ <summary>
+ 是否采用精简化的JSON返回
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.DingTalkClient.Disablelogdugging">
+ <summary>
+ 净值日志调试
+ </summary>
+</member>
+<member name="P:LINK.ddsdk.DingTalkClient.AccessToken">
+ <summary>
+ 2019.7.29
+ AccessToken值
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.DingTalkClient.#ctor(System.String,System.String,System.String)">
+ <summary>
+ 2019.8.1
+ 重构
+ </summary>
+ <param name="serverurl">url</param>
+ <param name="appkey">钉钉应用程序appkey</param>
+ <param name="appsecret">钉钉应用程序appsecret</param>
+</member>
+<member name="M:LINK.ddsdk.DingTalkClient.Execute(LINK.ddsdk.Request.DingTalkMessageSendRequest)">
+ <summary>
+ 2019.8.1
+ 执行http，发送请求
+ </summary>
+ <param name="vRequest">DingTalk消息内容类</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.DingTalkClient.Execute(LINK.ddsdk.Request.DingTalkMessageSendRequest,System.String)">
+ <summary>
+ 2019.7.31
+ 执行http，发送请求
+ </summary>
+ <param name="vRequest">DingTalk消息内容类</param>
+ <param name="vsession">accessToken</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.DingTalkClient.DoExecuteToP(LINK.ddsdk.Request.DingTalkMessageSendRequest,System.String,System.DateTime)">
+ <summary>
+ 2019.8.1
+ 发送消息到指定钉钉
+ </summary>
+ <param name="vrequest">需要被发送的消息请求</param>
+ <param name="vsession">access_Token</param>
+ <param name="vtimestamp"></param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.DingTalkClient.GetSession(System.String,System.String)">
+ <summary>
+ 2019.7.23
+ 获取access_token信息，获取成功返回1，失败返回-2，并输出错误信息
+ </summary>
+ <param name="vAppKey">应用appkey</param>
+ <param name="vAppSerect">应用appSerect</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.DingTalkClient.CreateErrorResponse(System.String,System.String)">
+ <summary>
+ 2019.8.1
+ 创建响应错误信息返回
+ </summary>
+ <param name="errCode">错误代码</param>
+ <param name="errMsg">错误信息</param>
+ <returns></returns>
+</member>
+<member name="T:LINK.ddsdk.DingTalkConstants">
+ <summary>
+ 2019.7.27
+ 钉钉常量设置
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.Request.DingTalkMessageSendRequest">
+ <summary>
+ 2019.7.30
+ dingtalk发送消息类，主要是为了键值组合
+ </summary>
+</member>
+<member name="M:LINK.ddsdk.Request.DingTalkMessageSendRequest.Validate">
+ <summary>
+ 2019.7.30
+ 键值信息验证
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.Response.TopResponse">
+ <summary>
+ 2019.8.1
+ 钉钉回应类，需要子类集成重写
+ </summary>
+</member>
+<member name="T:LINK.ddsdk.Tools.RequestValidator">
+ <summary>
+ 2019.7.29
+ 请求验证器类
+ </summary>
+</member>
+<member name="M:LINK.ddsdk.Tools.RequestValidator.ValidateRequired(System.String,System.Object)">
+ <summary>
+ 2019.7.30
+ 验证value字段是否是字符串，如果是空值，则抛出错误
+ </summary>
+ <param name="name">键</param>
+ <param name="value">值</param>
+</member>
+<member name="T:LINK.ddsdk.Tools.WebTooslib">
+ <summary>
+ 2019.7.27
+ kevin zhu
+ 网络类相关操作
+ </summary>
+</member>
+<member name="F:LINK.ddsdk.Tools.WebTooslib._nErrmessage1">
+ <summary>
+ 错误信息
+ </summary>
+</member>
+<member name="P:LINK.ddsdk.Tools.WebTooslib.Timeout">
+ <summary>
+ 2019.7.24
+ 等待请求开始返回的超时时间
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Tools.WebTooslib.ReadWriteTimeout">
+ <summary>
+ 等待读取数据完成的超时时间
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Tools.WebTooslib.DisableWebProxy">
+ <summary>
+ 2019.7.24
+ 禁止本地代理
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Tools.WebTooslib.IgnoreSslCheck">
+ <summary>
+ 2019.7.26
+ 是否忽略ssl检查
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:LINK.ddsdk.Tools.WebTooslib.ErrMessage">
+ <summary>
+ 2019.7.24
+ 返回错误信息
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.ExecutePost(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
+ <summary>
+ 2019.7.29
+ 执行http,发起Post,获取返回值
+ </summary>
+ <param name="vurl">请求web地址</param>
+ <param name="vtextParams">请求的文本参数</param>
+ <param name="vheaderParams">请求的头部参数</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.ExecutePost(System.String,System.String,System.Int32)">
+ <summary>
+ 2019.7.24
+ 发送url指令信息，返回接收消息
+ </summary>
+ <param name="vurl">请求页面</param>
+ <param name="vdata">请求的字符串数据</param>
+ <param name="vTimeout">默认超时2000</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.GetWebRequest(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+ <summary>
+ 2019.7.29
+ 发送Http请求
+ </summary>
+ <param name="vurl">请求web地址</param>
+ <param name="vmethod">请求方法</param>
+ <param name="vheaderParams">请求的头部文本参数</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.BuildQuery(System.Collections.Generic.IDictionary{System.String,System.String})">
+ <summary>
+ 2019.7.27
+ 组装普通文本请求参数
+ </summary>
+ <param name="vTxtPara">key-value形式请求参数字典</param>
+ <returns>URL编码后的请求数码</returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.GetResponseEncoding(System.Net.HttpWebResponse)">
+ <summary>
+ 2019.7.26
+ 返回指定的代码页名称的关联编码
+ </summary>
+ <param name="rsp">响应</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.GetResponseAsString(System.Net.HttpWebResponse,System.Text.Encoding)">
+ <summary>
+ 2019.7.27
+ 把响应流转换为文本。
+ </summary>
+ <param name="vrsp">响应流对象</param>
+ <param name="encode">编码方式，默认可以Encoding.UTF8</param>
+ <returns></returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.BuildRequestUrl(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+ <summary>
+ 2019.7.29
+ 组装含参数的请求URL。
+ </summary>
+ <param name="url">请求的web地址</param>
+ <param name="parameters">请求参数映射</param>
+ <returns>带参数的请求URL</returns>
+</member>
+<member name="M:LINK.ddsdk.Tools.WebTooslib.BuildRequestUrl(System.String,System.String[])">
+ <summary>
+ 2019.7.29
+ 组装含参数的请求URL。
+ </summary>
+ <param name="url">请求web地址</param>
+ <param name="queries">一个或多个经过URL编码后的请求参数串</param>
+ <returns>带参数的请求URL</returns>
+</member>
+<member name="T:LINK.ddsdk.TopDictionary">
+ <summary>
+ 2019.7.27
+ kevin zhu
+ 符合TOP习惯的纯字符串字典结构。
+ </summary>
+</member>
+<member name="M:LINK.ddsdk.TopDictionary.AddDictionary(System.String,System.Object)">
+ <summary>
+ 添加键值操作
+ </summary>
+ <param name="vkey">键</param>
+ <param name="vValue">值</param>
+</member>
+<member name="M:LINK.ddsdk.TopDictionary.AddAllDictionary(System.Collections.Generic.IDictionary{System.String,System.String})">
+ <summary>
+ 全部加入键值
+ </summary>
+ <param name="vDict">键值集合</param>
 </member>
 </members>
 </doc>

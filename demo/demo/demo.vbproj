@@ -65,6 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="LINK.ddsdk" />
+    <Import Include="LINK.ddsdk.Base" />
+    <Import Include="LINK.ddsdk.Request" />
+    <Import Include="LINK.ddsdk.Response" />
+    <Import Include="LINK.ddsdk.Tools" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />

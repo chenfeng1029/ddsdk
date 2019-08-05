@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.txt_content = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
         'txt_content
@@ -43,21 +43,21 @@ Partial Class Form1
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "发送内容"
         '
-        'Button1
+        'Button2
         '
-        Me.Button1.Location = New System.Drawing.Point(350, 181)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "发送"
-        Me.Button1.UseVisualStyleBackColor = true
+        Me.Button2.Location = New System.Drawing.Point(360, 185)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "发送"
+        Me.Button2.UseVisualStyleBackColor = true
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 15!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(929, 503)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_content)
         Me.Name = "Form1"
@@ -69,5 +69,5 @@ End Sub
 
     Friend WithEvents txt_content As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
